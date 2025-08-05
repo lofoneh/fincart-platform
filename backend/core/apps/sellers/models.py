@@ -1,6 +1,5 @@
-# apps/sellers/models.py
 from django.db import models
-from apps.users.models import User
+from apps.authentication.models import User
 
 class SellerProfile(models.Model):
     APPROVAL_STATUS = [
@@ -33,6 +32,13 @@ class SellerProfile(models.Model):
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.business_name
+
+    class Meta:
+        verbose_name_plural = "Seller Profiles"
+        ordering = ['-created_at']
 
 class SellerBankAccount(models.Model):
     seller = models.ForeignKey(SellerProfile, on_delete=models.CASCADE, related_name='bank_accounts')
@@ -43,3 +49,6 @@ class SellerBankAccount(models.Model):
     is_primary = models.BooleanField(default=False)
     verified = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"{self.bank_name} - {self.account_name} ({'Primary' if self.is_primary else 'Secondary'})"
