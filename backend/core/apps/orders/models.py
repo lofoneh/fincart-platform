@@ -1,8 +1,8 @@
-# apps/orders/models.py
 from django.db import models
-from apps.users.models import User, Address
+from apps.authentication.models import User, Address
 from apps.sellers.models import SellerProfile
 from apps.products.models import Product, ProductVariant
+import uuid
 
 class Order(models.Model):
     ORDER_STATUS = [
@@ -48,6 +48,13 @@ class Order(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     shipped_at = models.DateTimeField(null=True, blank=True)
     delivered_at = models.DateTimeField(null=True, blank=True)
+    
+    def __str__(self):
+        return f"Order {self.order_number} - {self.user.username}"
+
+    class Meta:
+        ordering = ['-created_at']
+        unique_together = ('user', 'order_number')
 
     def generate_order_number(self):
         import random
@@ -69,6 +76,12 @@ class OrderItem(models.Model):
     product_sku = models.CharField(max_length=100, blank=True)
     
     created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"{self.product_name} (Order: {self.order.order_number})"
+
+    class Meta:
+        unique_together = ('order', 'product', 'variant')
 
 class OrderStatusHistory(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='status_history')
@@ -77,5 +90,8 @@ class OrderStatusHistory(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     
-class Meta:
-    ordering = ['-created_at']
+    def __str__(self):
+        return f"Status {self.status} for Order {self.order.order_number} by {self.created_by.username} on {self.created_at}"
+    
+    class Meta:  
+        ordering = ['-created_at']
