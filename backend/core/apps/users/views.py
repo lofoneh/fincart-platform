@@ -2,8 +2,6 @@ from rest_framework import generics, viewsets, permissions, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.db.models import Q
-from django.shortcuts import get_object_or_404
 
 from apps.authentication.models import User, Address
 from .serializers import (
