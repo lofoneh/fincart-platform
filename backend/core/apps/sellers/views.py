@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from django_filters.rest_framework import DjangoFilterBackend
 from django.shortcuts import get_object_or_404
-from django.db.models import Sum, Count, Avg, Q
+from django.db.models import Sum, Count, Avg, Q, F
 from django.db import transaction
 from django.utils import timezone
 from datetime import timedelta
@@ -114,7 +114,7 @@ class SellerDashboardView(APIView):
         total_products = products.count()
         active_products = products.filter(status='active').count()
         low_stock_products = products.filter(
-            stock_quantity__lte=models.F('low_stock_threshold'),
+            stock_quantity__lte=F('low_stock_threshold'),
             track_inventory=True
         ).count()
         

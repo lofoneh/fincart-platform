@@ -187,5 +187,35 @@ class IsVerifiedSeller(permissions.BasePermission):
         
         # Check if user is a verified seller
         return (hasattr(request.user, 'is_seller') and 
-                request.user.is_seller and 
-                request.user.is_verified)
+                request.user.is_seller and
+                hasattr(request.user, 'seller_profile'))
+
+
+class CanViewAnalytics(permissions.BasePermission):
+    """
+    Permission for viewing product analytics and statistics.
+    """
+    
+    def has_permission(self, request, view):
+        if not request.user or not request.user.is_authenticated:
+            return False
+        
+        # Admin can view all analytics
+        if request.user.is_staff:
+            return True
+        
+        # Sellers can view their own product analytics
+        return hasattr(request.user, 'is_seller') and request.user.is_seller
+
+    def has_object_permission(self, request, view, obj):
+        # Admin can view all
+        if request.user.is_staff:
+            return True
+        
+        # Seller can only view their own product analytics
+        if (hasattr(request.user, 'is_seller') and 
+            request.user.is_seller and 
+            hasattr(obj, 'seller')):
+            return obj.seller.user == request.user
+        
+        return False
