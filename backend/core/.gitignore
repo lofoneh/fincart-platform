@@ -1,2 +1,10 @@
 venv
 .env
+# Local Python environment
+__pycache__/
+
+# Python bytecode files
+*.py[cod]
+
+# Distribution / packaging
+.Python
