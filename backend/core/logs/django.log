@@ -251,3 +251,66 @@ Traceback (most recent call last):
     raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
 django.template.exceptions.TemplateDoesNotExist: drf_spectacular/redoc.html
 "GET /redoc/ HTTP/1.1" 500 108229
+Watching for file changes with StatReloader
+Internal Server Error: /redoc/
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\renderers.py", line 160, in render
+    template = self.resolve_template(template_names)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\renderers.py", line 170, in resolve_template
+    return loader.select_template(template_names)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf_spectacular/redoc.html
+"GET /redoc/ HTTP/1.1" 500 108229
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /redoc/
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\response.py", line 74, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\renderers.py", line 160, in render
+    template = self.resolve_template(template_names)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\renderers.py", line 170, in resolve_template
+    return loader.select_template(template_names)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: drf_spectacular/redoc.html
+"GET /redoc/ HTTP/1.1" 500 108234
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
