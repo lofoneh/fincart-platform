@@ -227,3 +227,7 @@ Traceback (most recent call last):
     raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
 django.template.exceptions.TemplateDoesNotExist: drf_spectacular/redoc.html
 "GET /redoc/ HTTP/1.1" 500 107855
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
