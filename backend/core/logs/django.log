@@ -314,3 +314,653 @@ django.template.exceptions.TemplateDoesNotExist: drf_spectacular/redoc.html
 "GET /redoc/ HTTP/1.1" 500 108234
 C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
 Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /redoc/ HTTP/1.1" 200 727
+"GET /api/schema/ HTTP/1.1" 200 177691
+"GET /swagger/ HTTP/1.1" 200 4644
+"GET /api/schema/ HTTP/1.1" 200 372574
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\admin_tools\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\admin_tools\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /swagger/ HTTP/1.1" 200 4644
+Unauthorized: /api/auth/me/
+"GET /api/auth/me/ HTTP/1.1" 401 172
+"GET /redoc/ HTTP/1.1" 200 727
+Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1397, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1453, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `business_type` is not valid for model `SellerProfile` in `apps.admin_tools.serializers.SellerManagementSerializer`.
+"GET /api/schema/ HTTP/1.1" 500 209546
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\admin_tools\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\admin_tools\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\admin_tools\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\admin_tools\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /redoc/ HTTP/1.1" 200 727
+Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1397, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1453, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `business_type` is not valid for model `SellerProfile` in `apps.admin_tools.serializers.SellerManagementSerializer`.
+"GET /api/schema/ HTTP/1.1" 500 209546
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\admin_tools\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /redoc/ HTTP/1.1" 200 727
+Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1397, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1453, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `business_type` is not valid for model `SellerProfile` in `apps.admin_tools.serializers.SellerManagementSerializer`.
+"GET /api/schema/ HTTP/1.1" 500 209546
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /redoc/ HTTP/1.1" 200 727
+Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1397, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1453, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `business_type` is not valid for model `SellerProfile` in `apps.admin_tools.serializers.SellerManagementSerializer`.
+"GET /api/schema/ HTTP/1.1" 500 209399
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /redoc/ HTTP/1.1" 200 727
+Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\views.py", line 84, in get
+    return self._get_schema_response(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\generators.py", line 285, in get_schema
+    paths=self.parse(request, public),
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\generators.py", line 256, in parse
+    operation = view.schema.get_operation(
+        path, path_regex, path_prefix, method, self.registry
+    )
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 112, in get_operation
+    operation['responses'] = self._get_response_bodies()
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1397, in _get_response_bodies
+    return {'200': self._get_response_for_code(response_serializers, '200', direction=direction)}
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1453, in _get_response_for_code
+    component = self.resolve_serializer(serializer, direction)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1648, in resolve_serializer
+    component.schema = self._map_serializer(serializer, direction, bypass_extensions)
+                       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 949, in _map_serializer
+    schema = self._map_basic_serializer(serializer, direction)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\drf_spectacular\openapi.py", line 1042, in _map_basic_serializer
+    for field in serializer.fields.values():
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `business_type` is not valid for model `SellerProfile` in `apps.admin_tools.serializers.SellerManagementSerializer`.
+"GET /api/schema/ HTTP/1.1" 500 208403
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\admin_tools\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /redoc/ HTTP/1.1" 200 727
+"GET /api/schema/ HTTP/1.1" 200 177691
+"GET /swagger/ HTTP/1.1" 200 4644
+"GET /api/schema/ HTTP/1.1" 200 372574
+Internal Server Error: /api/auth/register
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\utils\deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/api/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /api/auth/register HTTP/1.1" 500 89934
+Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\client\default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\client\default.py", line 298, in get
+    value = client.get(key)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\redis\commands\core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\redis\client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\redis\client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\redis\connection.py", line 1423, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\redis\connection.py", line 364, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+"POST /api/auth/register/ HTTP/1.1" 500 33363
+Internal Server Error: /api/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\client\default.py", line 300, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 422, in initial
+    self.check_throttles(request)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\views.py", line 365, in check_throttles
+    if not throttle.allow_request(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\rest_framework\throttling.py", line 123, in allow_request
+    self.history = self.cache.get(self.key, [])
+                   ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\django_redis\client\default.py", line 298, in get
+    value = client.get(key)
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\redis\commands\core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\redis\client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\redis\client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\redis\connection.py", line 1423, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jeffe\Downloads\projects\fincart\backend\core\venv\Lib\site-packages\redis\connection.py", line 364, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+"POST /api/auth/register/ HTTP/1.1" 500 32800
+Watching for file changes with StatReloader
+"GET /swagger/ HTTP/1.1" 200 4644
+"GET /api/schema/ HTTP/1.1" 200 372574
+Unauthorized: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 401 172
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+Unauthorized: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/security/
+"GET /api/auth/security/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 401 172
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader
+Unauthorized: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 401 172
+Watching for file changes with StatReloader
+Bad Request: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 400 105
+"POST /api/auth/register/ HTTP/1.1" 201 169
+Internal Server Error: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 500 43
+Internal Server Error: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 500 43
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\fincart\settings\development.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /api/auth/register/
+"POST /api/auth/register/ HTTP/1.1" 400 107
+"POST /api/auth/register/ HTTP/1.1" 201 169
+C:\Users\jeffe\Downloads\projects\fincart\backend\core\apps\authentication\permissions.py changed, reloading.
+Watching for file changes with StatReloader

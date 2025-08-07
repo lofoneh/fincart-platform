@@ -205,3 +205,11 @@ class SecureActionPermission(permissions.BasePermission):
         return True
 
     message = "This action requires additional verification."
+    
+class AllowAny(permissions.BasePermission):
+    """
+    Custom permission to allow any user to access the view.
+    """
+    def has_permission(self, request, view):
+        # Allow any user to access the view
+        return True

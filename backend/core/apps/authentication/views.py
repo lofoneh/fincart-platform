@@ -25,7 +25,7 @@ from .serializers import (
     UserProfileSerializer, UserSerializer, AddressSerializer,
     AddressCreateSerializer, LoginHistorySerializer, UserActivitySerializer
 )
-from .permissions import IsOwnerOrReadOnly, IsVerifiedUser
+from .permissions import IsOwnerOrReadOnly
 from .utils import send_verification_email, send_password_reset_email, send_sms_code
 
 logger = logging.getLogger(__name__)
