@@ -8,3 +8,5 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+
+migrations/

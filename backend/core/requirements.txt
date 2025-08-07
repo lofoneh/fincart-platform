@@ -15,14 +15,17 @@ dj-database-url==3.0.1
 Django==5.0.2
 django-cors-headers==4.4.0
 django-filter==24.2
+django-redis==6.0.0
 django-storages==1.14.6
 djangorestframework==3.16.0
 djangorestframework_simplejwt==5.5.1
-drf-yasg==1.21.10
+drf-spectacular==0.28.0
+drf-spectacular-sidecar==2025.8.1
 factory_boy==3.3.3
 Faker==37.5.3
 gunicorn==23.0.0
 idna==3.10
+importlib_resources==6.5.2
 inflection==0.5.1
 iniconfig==2.1.0
 jsonschema==4.25.0
@@ -51,6 +54,8 @@ rpds-py==0.26.0
 setuptools==80.9.0
 six==1.17.0
 sqlparse==0.5.3
+swagger-spec-validator==3.0.4
+typing_extensions==4.14.1
 tzdata==2025.2
 uritemplate==4.2.0
 urllib3==2.5.0
