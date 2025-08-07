@@ -1,7 +1,7 @@
-# apps/admin_tools/models.py
 from django.db import models
 from apps.authentication.models import User
 from apps.sellers.models import SellerProfile
+from django.core.validators import FileExtensionValidator
 import uuid
 
 class AdminActionLog(models.Model):
@@ -33,7 +33,13 @@ class AdminActionLog(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-
+        indexes = [
+            models.Index(fields=['admin_user', 'created_at']),
+            models.Index(fields=['action_type', 'created_at']),
+            models.Index(fields=['target_user']),
+            models.Index(fields=['created_at']),
+        ]
+        
 class SellerApprovalRequest(models.Model):
     STATUS_CHOICES = [
         ('pending', 'Pending Review'),
@@ -54,6 +60,13 @@ class SellerApprovalRequest(models.Model):
     
     def __str__(self):
         return f"{self.seller.business_name} - {self.get_status_display()}"
+    
+    class Meta:
+        indexes = [
+            models.Index(fields=['status', 'submitted_at']),
+            models.Index(fields=['reviewed_by']),
+            models.Index(fields=['seller']),
+        ]
 
 class SystemNotification(models.Model):
     NOTIFICATION_TYPES = [
@@ -92,6 +105,32 @@ class SystemNotification(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['is_active', 'target_user_type']),
+            models.Index(fields=['priority', 'created_at']),
+            models.Index(fields=['expires_at']),
+            models.Index(fields=['notification_type']),
+        ]
+
+class SellerProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='seller_profile')
+    business_name = models.CharField(max_length=255)
+    business_address = models.TextField()
+    phone_number = models.CharField(max_length=20, blank=True)
+    website = models.URLField(blank=True)
+    is_verified = models.BooleanField(default=False)
+    verification_notes = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.business_name
+    
+    class Meta:
+        indexes = [
+            models.Index(fields=['user']),
+            models.Index(fields=['business_name']),
+            models.Index(fields=['is_verified']),
+        ]
 
 class PlatformSettings(models.Model):
     SETTING_TYPES = [
@@ -145,5 +184,23 @@ class UserReport(models.Model):
     def __str__(self):
         return f"Report by {self.reporter.email} against {self.reported_user.email}"
 
+    evidence_file = models.FileField(
+        upload_to='reports/',
+        null=True,
+        blank=True,
+        validators=[
+            FileExtensionValidator(
+                allowed_extensions=['jpg', 'jpeg', 'png', 'pdf', 'doc', 'docx']
+            )
+        ]
+    )
+    
     class Meta:
         ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['status', 'created_at']),
+            models.Index(fields=['report_type', 'status']),
+            models.Index(fields=['reporter']),
+            models.Index(fields=['reported_user']),
+            models.Index(fields=['handled_by']),
+        ]

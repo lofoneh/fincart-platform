@@ -40,7 +40,7 @@ urlpatterns = [
     path('api/admin/', include('apps.admin_tools.urls')),
     
     # Wallet Service Gateway (proxy to FastAPI)
-    path('api/wallet/', include('apps.wallet_gateway.urls')),  # We'll create this
+    #path('api/wallet/', include('apps.wallet_gateway.urls')),
 ]
 
 # Serve media files in development

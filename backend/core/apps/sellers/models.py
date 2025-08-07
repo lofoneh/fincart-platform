@@ -1,5 +1,6 @@
 from django.db import models
 from apps.authentication.models import User
+from django.core.exceptions import ValidationError
 
 class SellerProfile(models.Model):
     APPROVAL_STATUS = [
@@ -39,6 +40,17 @@ class SellerProfile(models.Model):
     class Meta:
         verbose_name_plural = "Seller Profiles"
         ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['approval_status']),
+            models.Index(fields=['created_at']),
+            models.Index(fields=['rating']),
+            models.Index(fields=['user']),
+        ]
+    
+    def clean(self):
+        super().clean()
+        if self.business_phone and not self.business_phone.replace('+', '').replace('-', '').replace(' ', '').isdigit():
+            raise ValidationError({'business_phone': 'Invalid phone number format'})
 
 class SellerBankAccount(models.Model):
     seller = models.ForeignKey(SellerProfile, on_delete=models.CASCADE, related_name='bank_accounts')
@@ -52,3 +64,15 @@ class SellerBankAccount(models.Model):
     
     def __str__(self):
         return f"{self.bank_name} - {self.account_name} ({'Primary' if self.is_primary else 'Secondary'})"
+    
+    class Meta:
+        indexes = [
+            models.Index(fields=['seller', 'is_primary']),
+            models.Index(fields=['verified']),
+        ]
+        constraints = [
+            models.UniqueConstraint(
+                fields=['seller', 'account_number', 'bank_name'],
+                name='unique_seller_bank_account'
+            )
+        ]
