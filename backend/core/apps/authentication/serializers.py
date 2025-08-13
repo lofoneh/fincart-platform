@@ -345,3 +345,34 @@ class AddressCreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['user'] = self.context['request'].user
         return super().create(validated_data)
+    
+class UserLoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True)
+    def validate_email(self, value):
+        return value.lower()
+    def validate(self, attrs):
+        email = attrs.get('email')
+        password = attrs.get('password')
+        if not email or not password:
+            raise serializers.ValidationError("Email and password are required")
+        user = authenticate(username=email, password=password)
+        if user is None:
+            raise serializers.ValidationError("Invalid credentials")
+        if not user.is_active:
+            raise serializers.ValidationError("User account is inactive")
+        attrs['user'] = user
+        return attrs
+
+class PasswordResetSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    def validate_email(self, value):
+        if not User.objects.filter(email=value.lower()).exists():
+            raise serializers.ValidationError("No user found with this email")
+        return value.lower()
+
+    def create(self, validated_data):
+        user = User.objects.get(email=validated_data['email'])
+        # Logic to send password reset email with token
+        # ...
+        return user
